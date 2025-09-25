@@ -3,7 +3,7 @@ class PMPExam {
     constructor() {
         this.currentQuestion = 0;
         this.selectedAnswers = {};
-        this.timeLeft = 600; // 10 minutes in seconds
+        this.timeLeft = 1200; // 20 minutes in seconds
         this.timer = null;
         this.isExamFinished = false;
         this.examStarted = false;
@@ -301,7 +301,7 @@ class PMPExam {
         // Reset exam state
         this.currentQuestion = 0;
         this.selectedAnswers = {};
-        this.timeLeft = 600;
+        this.timeLeft = 1200;
         this.isExamFinished = false;
         this.examStarted = false;
         
@@ -317,7 +317,7 @@ class PMPExam {
         }
         
         // Reset timer display
-        this.timeDisplay.textContent = '10:00';
+        this.timeDisplay.textContent = '20:00';
     }
 }
 
