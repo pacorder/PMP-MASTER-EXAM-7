@@ -1,127 +1,349 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen de Práctica PMP - 7ma Edición</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="google-adsense-account" content="ca-pub-2358850294363122">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prepárate para el Examen PMP | Patricio Cordero, PMP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .card-hover:hover {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    .feature-card:hover {
+      background-color: #f0f9ff;
+    }
+  </style>
+<meta name="google-adsense-account" content="ca-pub-2358850294363122">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2358850294363122"
      crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="container">
-        <!-- Welcome Section -->
-        <div id="welcome-section" class="welcome-container">
-            <div class="welcome-header">
-                <h1>Examen de Práctica PMP</h1>
-                <p>7ma Edición del PMBOK Guide</p>
-            </div>
-            
-            <div class="welcome-content">
-                <div class="description-section">
-                    <h2>Sobre este Examen de Práctica</h2>
-                    <p>
-                        Este examen de práctica está diseñado específicamente para ayudarte a prepararte para la certificación 
-                        Project Management Professional (PMP) basada en la 7ma edición del PMBOK Guide. A diferencia de las 
-                        ediciones anteriores que se centraban principalmente en procesos y la triple restricción (alcance, tiempo, 
-                        costo), la 7ma edición introduce un enfoque revolucionario centrado en la entrega de valor y los principios 
-                        fundamentales de gestión de proyectos.
-                    </p>
-                    <p>
-                        El examen consta de <strong>5 preguntas de opción múltiple</strong> que cubren los aspectos más relevantes 
-                        de la nueva estructura del PMBOK 7ma edición, incluyendo los <strong>12 Principios de Gestión de Proyectos</strong>, 
-                        los <strong>8 Dominios de Desempeño</strong>, y el enfoque en <strong>Modelos, Métodos y Artefactos</strong>. 
-                        Cada pregunta ha sido cuidadosamente elaborada para reflejar el tipo de escenarios y conceptos que encontrarás 
-                        en el examen real de certificación PMP.
-                    </p>
-                    <p>
-                        Tendrás <strong>10 minutos</strong> para completar todo el examen, lo que simula las condiciones de tiempo 
-                        del examen oficial. Este formato te permitirá evaluar tu comprensión de los conceptos fundamentales de la 
-                        7ma edición y identificar áreas que requieran mayor estudio. Recuerda que el enfoque actual del PMP se 
-                        centra en la adaptabilidad, la entrega de valor y la aplicación de principios en lugar de memorizar procesos.
-                    </p>
-                </div>
-                
-                <div class="exam-info">
-                    <div class="info-card">
-                        <h3>Características del Examen</h3>
-                        <ul>
-                            <li>5 preguntas de opción múltiple</li>
-                            <li>Tiempo límite: 10 minutos</li>
-                            <li>Basado en PMBOK 7ma edición</li>
-                            <li>Enfoque en principios y dominios</li>
-                            <li>Explicaciones detalladas al finalizar</li>
-                            <li>Indicación del dominio por pregunta</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="start-button-container">
-                <button id="start-exam-btn" class="start-btn">
-                    Comenzar Examen de Práctica
-                </button>
-            </div>
+<body class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+
+  <!-- Header -->
+  <header class="px-4 lg:px-6 h-16 flex items-center border-b border-gray-200">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="bg-blue-600 p-2 rounded-lg">
+          <!-- Award Icon (SVG) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
         </div>
-
-        <!-- Exam Section (hidden initially) -->
-        <div id="exam-section" class="exam-container" style="display: none;">
-            <!-- Header -->
-            <div class="header">
-                <h1>Examen de Práctica PMP</h1>
-                <div class="timer">
-                    <span>Tiempo restante: </span>
-                    <span id="time-display">10:00</span>
-                </div>
-                <div class="progress-container">
-                    <span id="question-counter">Pregunta 1 de 5</span>
-                    <div class="progress-bar">
-                        <div id="progress-fill" class="progress-fill"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Question Area -->
-            <div class="question-area">
-                <div class="domain-indicator">
-                    <span>Dominio: </span>
-                    <span id="domain-text" class="domain-badge"></span>
-                </div>
-                <h2 id="question-text"></h2>
-                <div id="options-container" class="options-container"></div>
-            </div>
-
-            <!-- Navigation -->
-            <div class="navigation">
-                <button id="prev-btn" class="nav-btn">Anterior</button>
-                <button id="next-btn" class="nav-btn next-btn">Siguiente</button>
-                <button id="submit-btn" class="nav-btn submit-btn" style="display: none;">Finalizar Examen</button>
-                <button id="finish-btn" class="nav-btn submit-btn">Finalizar Examen</button>
-            </div>
-        </div>
-
-        <!-- Results Modal -->
-        <div id="results-modal" class="modal" style="display: none;">
-            <div class="modal-content">
-                <div class="results-header">
-                    <h2>Resultados del Examen</h2>
-                </div>
-                <div class="results-body">
-                    <div class="score-container">
-                        <div id="score-percentage" class="score-percentage"></div>
-                        <div id="result-message" class="result-message"></div>
-                    </div>
-                    <div id="detailed-results" class="detailed-results"></div>
-                </div>
-                <div class="results-footer">
-                    <button id="restart-btn" class="restart-btn">Reiniciar Examen</button>
-                </div>
-            </div>
-        </div>
+        <span class="text-xl font-bold text-gray-900">Prepárate para el PMP</span>
+      </div>
+      <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-1 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+        <!-- Play Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Mi Curso en Udemy</span>
+        <!-- External Link Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
     </div>
+  </header>
 
-    <script src="questions.js"></script>
-    <script src="script.js"></script>
+  <!-- Hero Section -->
+  <section class="py-16 md:py-24">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <div class="animate-fade-in-up">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Domina el <span class="text-blue-600">Examen PMP</span> con Confianza
+        </h1>
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          Practica con exámenes alineados a la <strong>7.ª edición del PMBOK®</strong>, 
+          basados en principios, dominios de desempeño y enfoque ágil/híbrido.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="pmpexam1.html" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg">
+            Iniciar Examen de Práctica
+          </a>
+          <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252" target="_blank" rel="noopener noreferrer" class="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors">
+            <div class="flex items-center justify-center space-x-2">
+              <!-- Graduation Cap -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"></path>
+                <path d="M6 12v5c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-5"></path>
+              </svg>
+              <span>Curso Completo en Udemy</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          ¿Por qué Nuestros Exámenes?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Diseñados específicamente para el formato actual del examen PMP (basado en PMBOK 7)
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Feature 1 -->
+        <div class="text-center p-6 rounded-xl bg-gray-50 feature-card transition-colors group shadow-sm">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-600 text-white mb-4 group-hover:bg-blue-700 transition-colors">
+            <!-- Target -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Basado en PMBOK 7</h3>
+          <p class="text-gray-600">Enfocado en principios, dominios de desempeño y entrega de valor.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="text-center p-6 rounded-xl bg-gray-50 feature-card transition-colors group shadow-sm">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-600 text-white mb-4 group-hover:bg-blue-700 transition-colors">
+            <!-- Clock -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Simulación de Tiempo Real</h3>
+          <p class="text-gray-600">Practica con límites de tiempo como en el examen oficial.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="text-center p-6 rounded-xl bg-gray-50 feature-card transition-colors group shadow-sm">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-600 text-white mb-4 group-hover:bg-blue-700 transition-colors">
+            <!-- BookOpen -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Preguntas Situacionales</h3>
+          <p class="text-gray-600">Escenarios reales que reflejan la complejidad del examen PMP.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="text-center p-6 rounded-xl bg-gray-50 feature-card transition-colors group shadow-sm">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-600 text-white mb-4 group-hover:bg-blue-700 transition-colors">
+            <!-- Award -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Retroalimentación Inmediata</h3>
+          <p class="text-gray-600">Identifica tus áreas de mejora al instante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exams Section -->
+  <section class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Exámenes de Práctica Disponibles
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Evalúa tu conocimiento con nuestros exámenes gratuitos alineados al PMBOK 7
+        </p>
+      </div>
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Exam 1 -->
+        <div class="bg-white rounded-xl shadow-sm p-8 card-hover transition-shadow">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex-1 mb-6 lg:mb-0">
+              <h3 class="text-2xl font-bold text-gray-900 mb-3">Examen de Práctica PMP – PMBOK 7.ª Edición</h3>
+              <p class="text-gray-600 mb-4">15 preguntas enfocadas en el Dominio principal "People".</p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex items-center space-x-2 text-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>15 minutos</span>
+                </div>
+                <div class="flex items-center space-x-2 text-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  <span>15 preguntas</span>
+                </div>
+              </div>
+            </div>
+            <a href="pmpexam1.html" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors whitespace-nowrap">
+              Tomar Examen
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Udemy CTA -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 text-white text-center shadow-xl">
+        <!-- Podcast Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-6 text-blue-200">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="2" x2="12" y2="4"></line>
+          <line x1="12" y1="20" x2="12" y2="22"></line>
+          <line x1="2" y1="12" x2="4" y2="12"></line>
+          <line x1="20" y1="12" x2="22" y2="12"></line>
+          <line x1="5.64" y1="5.64" x2="7.05" y2="7.05"></line>
+          <line x1="16.95" y1="16.95" x2="18.36" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="16.95" y2="7.05"></line>
+          <line x1="7.05" y1="16.95" x2="5.64" y2="18.36"></line>
+        </svg>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          ¿Listo para Dominar el Examen PMP en Serio?
+        </h2>
+        <p class="text-blue-100 text-lg mb-8 leading-relaxed max-w-3xl mx-auto">
+          Los exámenes de práctica son un excelente comienzo, pero para aprobar en tu primer intento, necesitas una preparación completa, estructurada y estratégica. En mi curso de Udemy encontrarás cinco exámenes completos alineados con el Esquema de Contenido del Examen (ECO) del PMP: <strong>People (60 preguntas)</strong>, <strong>Process (60 preguntas)</strong>, <strong>Business Environment (50 preguntas)</strong>, <strong>Agile/Hybrid (80 preguntas)</strong> y <strong>Predictive (80 preguntas)</strong>. Además, recibirás explicaciones detalladas, estrategias probadas para abordar preguntas situacionales y ejemplos reales extraídos de proyectos de energía renovable que refuerzan los conceptos clave del PMBOK® 7.ª edición.
+        </p>
+        <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-white text-blue-700 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <span>Accede al Curso Completo en Udemy</span>
+        </a>
+        <p class="text-blue-200 text-sm mt-4">
+          +250 preguntas reales • Explicaciones profundas • Enfoque en escenarios del mundo real
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reasons -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          ¿Por Qué Deberías Tomar Estos Exámenes Antes del Examen Oficial?
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          No se trata solo de practicar... se trata de prepararte estratégicamente para triunfar.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Reason 1 -->
+        <div class="bg-gray-50 p-6 rounded-xl hover:bg-blue-50 transition-colors shadow-sm">
+          <div class="flex items-start space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"></path>
+              <path d="M6 12v5c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-5"></path>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Inicia tu Camino hacia el Reconocimiento Profesional con el PMP</h3>
+              <p class="text-gray-700">La certificación PMP es altamente valorada en el mercado global y abre puertas a promociones, mayores salarios y roles de liderazgo en gestión de proyectos. Con estos exámenes de práctica, no solo te preparas —te posicionas como candidato competitivo desde el primer día.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Reason 2 -->
+        <div class="bg-gray-50 p-6 rounded-xl hover:bg-blue-50 transition-colors shadow-sm">
+          <div class="flex items-start space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Estudia a Tu Propio Ritmo y Convierte Estos Exámenes en Tu Entrenador Personal</h3>
+              <p class="text-gray-700">No necesitas un horario fijo ni un tutor presencial. Estos exámenes están diseñados para adaptarse a tu ritmo: repite las preguntas, analiza tus errores y fortalece tus puntos débiles cuando tú lo decidas. Es como tener un coach de PMP siempre disponible.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Reason 3 -->
+        <div class="bg-gray-50 p-6 rounded-xl hover:bg-yellow-50 transition-colors shadow-sm">
+          <div class="flex items-start space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">¿Por Qué Necesitas Estos Exámenes de Práctica Para Tu Preparación PMP?</h3>
+              <p class="text-gray-700 whitespace-pre-line">Durante tu preparación, tienes DOS opciones:
+
+• Aceptar materiales de revisión ineficientes y tácticas de memorización —sin saber si realmente te están llevando al éxito.
+
+• O elegir una estrategia probada: exámenes realistas, retroalimentación inmediata y análisis profundo de cada pregunta. Estos exámenes son tu herramienta para convertir el estudio en resultados medibles.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Reason 4 -->
+        <div class="bg-gray-50 p-6 rounded-xl hover:bg-green-50 transition-colors shadow-sm">
+          <div class="flex items-start space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">Domina el Pensamiento Estratégico, No Solo el Contenido</h3>
+              <p class="text-gray-700">El examen PMP actual ya no se trata de memorizar procesos, sino de aplicar principios en contextos cambiantes. Nuestros exámenes te entrenan para pensar como un gerente de proyectos experimentado: priorizar, decidir bajo incertidumbre y entregar valor en cualquier situación.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-16 bg-blue-600">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-3xl mx-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16 text-white mx-auto mb-6 opacity-90">
+          <path d="M9 18h6"></path>
+          <path d="M10 22h4"></path>
+          <path d="M18 16a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4Z"></path>
+          <path d="M12 11V8"></path>
+          <path d="M9 8h6"></path>
+          <path d="M12 3v5"></path>
+        </svg>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          ¡Aprueba tu Examen PMP en el Primer Intento!
+        </h2>
+        <p class="text-blue-100 text-lg mb-8">
+          Combina práctica con exámenes reales y aprendizaje estructurado en mi curso de Udemy.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="pmpexam1.html" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+            Practicar Gratis Ahora
+          </a>
+          <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252" target="_blank" rel="noopener noreferrer" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+            Ir al Curso en Udemy
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900 text-gray-400 text-center">
+    <div class="container mx-auto px-4">
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
 </body>
 </html>

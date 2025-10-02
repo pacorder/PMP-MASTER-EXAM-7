@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Práctica PMP - 7ma Edición</title>
+    <link rel="stylesheet" href="style.css">
+    
+<meta name="google-adsense-account" content="ca-pub-2358850294363122">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2358850294363122"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Section -->
+        <div id="welcome-section" class="welcome-container">
+            <div class="welcome-header">
+                <h1>Examen de Práctica PMP</h1>
+                <p>7ma Edición del PMBOK Guide</p>
+            </div>
+            
+            <div class="welcome-content">
+                <div class="description-section">
+                    <h2>Sobre este Examen de Práctica</h2>
+                    <p>
+                        Este examen de práctica está diseñado específicamente para ayudarte a prepararte para la certificación 
+                        Project Management Professional (PMP) basada en la 7ma edición del PMBOK Guide. A diferencia de las 
+                        ediciones anteriores que se centraban principalmente en procesos y la triple restricción (alcance, tiempo, 
+                        costo), la 7ma edición introduce un enfoque revolucionario centrado en la entrega de valor y los principios 
+                        fundamentales de gestión de proyectos.
+                    </p>
+                    <p>
+                        El examen consta de <strong>preguntas de opción múltiple</strong> que cubren los aspectos más relevantes 
+                        de la nueva estructura del PMBOK 7ma edición, incluyendo los <strong>12 Principios de Gestión de Proyectos</strong>, 
+                        los <strong>8 Dominios de Desempeño</strong>, y el enfoque en <strong>Modelos, Métodos y Artefactos</strong>. 
+                        Cada pregunta ha sido cuidadosamente elaborada para reflejar el tipo de escenarios y conceptos que encontrarás 
+                        en el examen real de certificación PMP.
+                    </p>
+                    <p>
+                        Tendrás tiempo limitado para completar todo el examen, lo que simula las condiciones de tiempo 
+                        del examen oficial. Este formato te permitirá evaluar tu comprensión de los conceptos fundamentales de la 
+                        7ma edición y identificar áreas que requieran mayor estudio. Recuerda que el enfoque actual del PMP se 
+                        centra en la adaptabilidad, la entrega de valor y la aplicación de principios en lugar de memorizar procesos.
+                    </p>
+                </div>
+                
+                <div class="exam-info">
+                    <div class="info-card">
+                        <h3>Características del Examen</h3>
+                        <ul>
+                            <li>15 preguntas de opción múltiple</li>
+                            <li>Tiempo límite: 15 minutos</li>
+                            <li>Basado en PMBOK 7ma edición</li>
+                            <li>Enfoque en principios y dominios</li>
+                            <li>Explicaciones detalladas al finalizar</li>
+                            <li>Indicación del dominio por pregunta</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="start-button-container">
+                <button id="start-exam-btn" class="start-btn">
+                    Comenzar Examen de Práctica
+                </button>
+            </div>
+        </div>
+
+        <!-- Exam Section (hidden initially) -->
+        <div id="exam-section" class="exam-container" style="display: none;">
+            <!-- Header -->
+            <div class="header">
+                <h1>Examen de Práctica PMP</h1>
+                <div class="timer">
+                    <span>Tiempo restante: </span>
+                    <span id="time-display">10:00</span>
+                </div>
+                <div class="progress-container">
+                    <span id="question-counter">Pregunta 1 de 5</span>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Area -->
+            <div class="question-area">
+                <div class="domain-indicator">
+                    <span>Dominio: </span>
+                    <span id="domain-text" class="domain-badge"></span>
+                </div>
+                <h2 id="question-text"></h2>
+                <div id="options-container" class="options-container"></div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="navigation">
+                <button id="prev-btn" class="nav-btn">Anterior</button>
+                <button id="next-btn" class="nav-btn next-btn">Siguiente</button>
+                <button id="submit-btn" class="nav-btn submit-btn" style="display: none;">Finalizar Examen</button>
+                <button id="finish-btn" class="nav-btn submit-btn">Finalizar Examen</button>
+            </div>
+        </div>
+
+        <!-- Results Modal -->
+        <div id="results-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="results-header">
+                    <h2>Resultados del Examen</h2>
+                </div>
+                <div class="results-body">
+                    <div class="score-container">
+                        <div id="score-percentage" class="score-percentage"></div>
+                        <div id="result-message" class="result-message"></div>
+                    </div>
+                    <div id="detailed-results" class="detailed-results"></div>
+                </div>
+                <div class="results-footer">
+                    <button id="restart-btn" class="restart-btn">Reiniciar Examen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

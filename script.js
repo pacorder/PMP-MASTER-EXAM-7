@@ -3,7 +3,7 @@ class PMPExam {
     constructor() {
         this.currentQuestion = 0;
         this.selectedAnswers = {};
-        this.timeLeft = 1200; // 20 minutes in seconds
+        this.timeLeft = 600; // 10 minutes in seconds
         this.timer = null;
         this.isExamFinished = false;
         this.examStarted = false;
@@ -264,34 +264,46 @@ class PMPExam {
         `;
         detailedResults.appendChild(domainPerformance);
         
-        // Add individual question results
-        const questionsResults = document.createElement('div');
-        questionsResults.className = 'questions-results';
-        questionsResults.innerHTML = '<h3>Detalles por Pregunta</h3>';
-        
-        questions.forEach((question, index) => {
-            const userAnswer = this.selectedAnswers[question.id];
-            const isCorrect = userAnswer === question.correctAnswer;
-            const resultItem = document.createElement('div');
-            resultItem.className = `result-item ${isCorrect ? 'correct' : 'incorrect'}`;
-            
-            let resultHTML = `
-                <h3>Pregunta ${index + 1}: ${question.question}</h3>
-                <div class="domain-info">Dominio: ${question.domain}</div>
-                <p><strong>Tu respuesta:</strong> ${userAnswer !== undefined ? question.options[userAnswer] : 'No respondida'}</p>
-            `;
-            
-            if (!isCorrect) {
-                resultHTML += `<p><strong class="correct-answer">Respuesta correcta:</strong> ${question.options[question.correctAnswer]}</p>`;
-            }
-            
-            resultHTML += `<p><strong class="explanation">Explicación:</strong> ${question.explanation}</p>`;
-            
-            resultItem.innerHTML = resultHTML;
-            questionsResults.appendChild(resultItem);
+        // Add only incorrect questions section
+        const incorrectQuestions = questions.filter(question => {
+            return this.selectedAnswers[question.id] !== question.correctAnswer;
         });
         
-        detailedResults.appendChild(questionsResults);
+        if (incorrectQuestions.length > 0) {
+            const incorrectResults = document.createElement('div');
+            incorrectResults.className = 'questions-results';
+            incorrectResults.innerHTML = '<h3>Preguntas Incorrectas</h3>';
+            
+            incorrectQuestions.forEach((question, index) => {
+                const userAnswer = this.selectedAnswers[question.id];
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item incorrect';
+                
+                let resultHTML = `
+                    <h3>Pregunta ${questions.findIndex(q => q.id === question.id) + 1}: ${question.question}</h3>
+                    <div class="domain-info">Dominio: ${question.domain}</div>
+                    <p><strong>Tu respuesta:</strong> ${userAnswer !== undefined ? question.options[userAnswer] : 'No respondida'}</p>
+                    <p><strong class="correct-answer">Respuesta correcta:</strong> ${question.options[question.correctAnswer]}</p>
+                    <p><strong class="explanation">Explicación:</strong> ${question.explanation}</p>
+                `;
+                
+                resultItem.innerHTML = resultHTML;
+                incorrectResults.appendChild(resultItem);
+            });
+            
+            detailedResults.appendChild(incorrectResults);
+        } else {
+            // If all answers are correct, show a congratulatory message
+            const allCorrectMessage = document.createElement('div');
+            allCorrectMessage.className = 'all-correct-message';
+            allCorrectMessage.innerHTML = `
+                <div style="text-align: center; padding: 20px; background: #f0fdf4; border-radius: 12px; border: 2px solid #10b981;">
+                    <h3>¡Excelente trabajo!</h3>
+                    <p>Has respondido correctamente todas las preguntas.</p>
+                </div>
+            `;
+            detailedResults.appendChild(allCorrectMessage);
+        }
         
         // Show modal
         this.resultsModal.style.display = 'flex';
@@ -301,7 +313,7 @@ class PMPExam {
         // Reset exam state
         this.currentQuestion = 0;
         this.selectedAnswers = {};
-        this.timeLeft = 1200;
+        this.timeLeft = 600;
         this.isExamFinished = false;
         this.examStarted = false;
         
@@ -317,7 +329,7 @@ class PMPExam {
         }
         
         // Reset timer display
-        this.timeDisplay.textContent = '20:00';
+        this.timeDisplay.textContent = '10:00';
     }
 }
 
