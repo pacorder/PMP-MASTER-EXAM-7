@@ -3,124 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-2358850294363122">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2358850294363122" crossorigin="anonymous"></script>
     <title>Examen de Práctica PMP - 7ma Edición</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+        .delay-7 { animation-delay: 0.7s; }
+        .delay-8 { animation-delay: 0.8s; }
+        .delay-9 { animation-delay: 0.9s; }
+        .delay-10 { animation-delay: 1.0s; }
+        .delay-11 { animation-delay: 1.1s; }
+        .delay-12 { animation-delay: 1.2s; }
+        .delay-13 { animation-delay: 1.3s; }
+    </style>
     <link rel="stylesheet" href="style.css">
-    
-<meta name="google-adsense-account" content="ca-pub-2358850294363122">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2358850294363122"
-     crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
+    <!-- Header with Modern, Dynamic Navigation -->
+    <header class="px-4 lg:px-6 h-20 flex items-center border-b border-gray-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo / Brand -->
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-2.5 rounded-xl shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold bg-gradient-to-r from-gray-900 to-blue-700 bg-clip-text text-transparent">
+                    Prepárate para el PMP
+                </span>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a href="index.html" class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 flex items-center space-x-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Inicio</span>
+                </a>
+                <a href="tips.html" class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+                    Tips
+                </a>
+                <a href="pmpexam1.html" class="px-4 py-2.5 rounded-lg font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200">
+                    Examen Gratis
+                </a>
+                <a href="https://www.udemy.com/course/pmp-exam-prep-mastery-based-on-pmbok-7th-edition/?referralCode=254FB14904B38D95B252" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-lg font-medium text-blue-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 flex items-center space-x-1.5 group">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:animate-pulse">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <span>Mi Curso en Udemy</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button (optional for future expansion) -->
+            <div class="md:hidden">
+                <button class="p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
         <!-- Welcome Section -->
-        <div id="welcome-section" class="welcome-container">
-            <div class="welcome-header">
-                <h1>Examen de Práctica PMP</h1>
-                <p>7ma Edición del PMBOK Guide</p>
+        <div id="welcome-section" class="welcome-container max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <div class="welcome-header text-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">Examen de Práctica PMP</h1>
+                <p class="text-xl text-blue-600 font-semibold">7ma Edición del PMBOK Guide</p>
             </div>
             
             <div class="welcome-content">
-                <div class="description-section">
-                    <h2>Sobre este Examen de Práctica</h2>
-                    <p>
+                <div class="description-section mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Sobre este Examen de Práctica</h2>
+                    <p class="text-lg text-gray-600 mb-4 leading-relaxed">
                         Este examen de práctica está diseñado específicamente para ayudarte a prepararte para la certificación 
                         Project Management Professional (PMP) basada en la 7ma edición del PMBOK Guide. A diferencia de las 
                         ediciones anteriores que se centraban principalmente en procesos y la triple restricción (alcance, tiempo, 
                         costo), la 7ma edición introduce un enfoque revolucionario centrado en la entrega de valor y los principios 
                         fundamentales de gestión de proyectos.
                     </p>
-                    <p>
-                        El examen consta de <strong>preguntas de opción múltiple</strong> que cubren los aspectos más relevantes 
+                    <p class="text-lg text-gray-600 mb-4 leading-relaxed">
+                        El examen consta de <strong>5 preguntas de opción múltiple</strong> que cubren los aspectos más relevantes 
                         de la nueva estructura del PMBOK 7ma edición, incluyendo los <strong>12 Principios de Gestión de Proyectos</strong>, 
                         los <strong>8 Dominios de Desempeño</strong>, y el enfoque en <strong>Modelos, Métodos y Artefactos</strong>. 
                         Cada pregunta ha sido cuidadosamente elaborada para reflejar el tipo de escenarios y conceptos que encontrarás 
                         en el examen real de certificación PMP.
                     </p>
-                    <p>
-                        Tendrás tiempo limitado para completar todo el examen, lo que simula las condiciones de tiempo 
+                    <p class="text-lg text-gray-600 mb-4 leading-relaxed">
+                        Tendrás <strong>10 minutos</strong> para completar todo el examen, lo que simula las condiciones de tiempo 
                         del examen oficial. Este formato te permitirá evaluar tu comprensión de los conceptos fundamentales de la 
                         7ma edición y identificar áreas que requieran mayor estudio. Recuerda que el enfoque actual del PMP se 
                         centra en la adaptabilidad, la entrega de valor y la aplicación de principios en lugar de memorizar procesos.
                     </p>
                 </div>
                 
-                <div class="exam-info">
-                    <div class="info-card">
-                        <h3>Características del Examen</h3>
-                        <ul>
-                            <li>15 preguntas de opción múltiple</li>
-                            <li>Tiempo límite: 25 minutos</li>
-                            <li>Basado en PMBOK 7ma edición</li>
-                            <li>Enfoque en principios y dominios</li>
-                            <li>Explicaciones detalladas al finalizar</li>
-                            <li>Indicación del dominio por pregunta</li>
+                <div class="exam-info flex justify-center mb-8">
+                    <div class="info-card bg-blue-50 border-2 border-blue-200 rounded-xl p-6 max-w-md">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4 text-center">Características del Examen</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>5 preguntas de opción múltiple</span>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Tiempo límite: 10 minutos</span>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Basado en PMBOK 7ma edición</span>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Enfoque en principios y dominios</span>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Explicaciones detalladas al finalizar</span>
+                            </li>
+                            <li class="flex items-center text-gray-700">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Indicación del dominio por pregunta</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
             
-            <div class="start-button-container">
-                <button id="start-exam-btn" class="start-btn">
+            <div class="start-button-container text-center">
+                <button id="start-exam-btn" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-indigo-800 transition-all duration-200 shadow-lg">
                     Comenzar Examen de Práctica
                 </button>
             </div>
         </div>
 
         <!-- Exam Section (hidden initially) -->
-        <div id="exam-section" class="exam-container" style="display: none;">
+        <div id="exam-section" class="exam-container max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden" style="display: none;">
             <!-- Header -->
-            <div class="header">
-                <h1>Examen de Práctica PMP</h1>
-                <div class="timer">
-                    <span>Tiempo restante: </span>
-                    <span id="time-display">25:00</span>
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h1 class="text-2xl font-bold">Examen de Práctica PMP</h1>
+                    <div class="text-right">
+                        <div class="text-sm opacity-90">Tiempo restante</div>
+                        <div class="text-xl font-bold" id="time-display">10:00</div>
+                    </div>
                 </div>
-                <div class="progress-container">
-                    <span id="question-counter">Pregunta 1 de 25</span>
-                    <div class="progress-bar">
-                        <div id="progress-fill" class="progress-fill"></div>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm opacity-90" id="question-counter">Pregunta 1 de 5</span>
+                    <div class="w-32 bg-blue-500 rounded-full h-2">
+                        <div id="progress-fill" class="bg-white h-2 rounded-full transition-all duration-300" style="width: 0%;"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Question Area -->
-            <div class="question-area">
-                <div class="domain-indicator">
-                    <span>Dominio: </span>
-                    <span id="domain-text" class="domain-badge"></span>
+            <div class="p-8">
+                <div class="mb-6">
+                    <span class="font-semibold text-gray-700 mr-2">Dominio:</span>
+                    <span id="domain-text" class="inline-block px-3 py-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full text-sm font-medium"></span>
                 </div>
-                <h2 id="question-text"></h2>
-                <div id="options-container" class="options-container"></div>
+                <h2 id="question-text" class="text-xl font-semibold text-gray-800 mb-6 leading-relaxed"></h2>
+                <div id="options-container" class="space-y-4"></div>
             </div>
 
             <!-- Navigation -->
-            <div class="navigation">
-                <button id="prev-btn" class="nav-btn">Anterior</button>
-                <button id="next-btn" class="nav-btn next-btn">Siguiente</button>
-                <button id="submit-btn" class="nav-btn submit-btn" style="display: none;">Finalizar Examen</button>
-                <button id="finish-btn" class="nav-btn submit-btn">Finalizar Examen</button>
+            <div class="flex justify-between items-center p-6 bg-gray-50 border-t">
+                <button id="prev-btn" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-400 transition-colors">
+                    Anterior
+                </button>
+                <div class="flex gap-4">
+                    <button id="next-btn" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-600 hover:to-indigo-700 transition-all duration-200 shadow-lg">
+                        Siguiente
+                    </button>
+                    <button id="submit-btn" class="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-lg" style="display: none;">
+                        Finalizar Examen
+                    </button>
+                    <button id="finish-btn" class="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200 shadow-lg">
+                        Finalizar Examen
+                    </button>
+                </div>
             </div>
         </div>
 
         <!-- Results Modal -->
-        <div id="results-modal" class="modal" style="display: none;">
-            <div class="modal-content">
-                <div class="results-header">
-                    <h2>Resultados del Examen</h2>
+        <div id="results-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" style="display: none;">
+            <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto mx-4">
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 rounded-t-2xl">
+                    <h2 class="text-2xl font-bold text-center">Resultados del Examen</h2>
                 </div>
-                <div class="results-body">
-                    <div class="score-container">
-                        <div id="score-percentage" class="score-percentage"></div>
-                        <div id="result-message" class="result-message"></div>
+                <div class="p-6">
+                    <div class="text-center mb-8">
+                        <div id="score-percentage" class="text-5xl font-bold mb-4"></div>
+                        <div id="result-message" class="text-xl font-semibold mb-2"></div>
                     </div>
-                    <div id="detailed-results" class="detailed-results"></div>
+
+                    <div id="detailed-results" class="space-y-6"></div>
                 </div>
-                <div class="results-footer">
-                    <button id="restart-btn" class="restart-btn">Reiniciar Examen</button>
+                <div class="p-6 bg-gray-50 border-t text-center">
+                    <button id="restart-btn" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-800 transition-all duration-200 shadow-lg">
+                        Reiniciar Examen
+                    </button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-gray-900 text-gray-400 text-center mt-16">
+        <div class="container mx-auto px-4">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="questions.js"></script>
     <script src="script.js"></script>
